@@ -1,11 +1,11 @@
 const pgPromise = require('pg-promise');
 const config = {
-    user: 'postgres',
+    host: process.env.HOST,
     port: "5432",
-    host: 'localhost',
-    database: process.env.CADENA_CONEXION,
-    password: '12345'
-        //ssl:true      
+    database: process.env.DATABASE,
+    user: process.env.USER,
+    password: process.env.PASSWORD,
+    ssl: true
 }
 const pgp = pgPromise({});
 const db = pgp(config);

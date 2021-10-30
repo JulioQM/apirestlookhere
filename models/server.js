@@ -10,6 +10,8 @@ class Server {
 
         // puerto la que va correr el aplicativo
         this.port = process.env.PORT;
+        // sirve para quitar o desautorizar el mensaje que se necesita un CERTIFICADO SSL
+        process.env['NODE_TLS_REJECT_UNAUTHORIZED'] = 0;
 
         // ruta del edpoint
         this.usuarioPath = '/api/lookhere';
